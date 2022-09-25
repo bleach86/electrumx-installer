@@ -13,7 +13,7 @@ fi
 
 has_rocksdb_binary=1
 
-function install_python37 {
+function install_python38 {
 	$APT install -y software-properties-common || _error "Could not install package" 5
 	add-apt-repository -y ppa:deadsnakes/ppa
 	$APT update
@@ -31,4 +31,8 @@ function binary_uninstall_rocksdb {
 
 function install_leveldb {
 	$APT install -y libleveldb-dev || _error "Could not install packages" 1
+}
+
+function install_pip3 {
+	$APT install -y python3-pip || _error "Could not install packages" 1
 }
