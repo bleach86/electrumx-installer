@@ -34,5 +34,5 @@ function install_leveldb {
 }
 
 function install_pip3 {
-	$APT install -y python3-pip || _error "Could not install packages" 1
+	$APT install -y python3-pip python3-distutils || _error "Could not install packages" 1
 }

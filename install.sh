@@ -188,9 +188,8 @@ if [ $UPDATE_ONLY == 0 ] || [ $UPDATE_PYTHON == 1 ]; then
 	if ! $python -m pip > /dev/null 2>&1; then
 		_progress_total=$(( $_progress_total + 1 ))
 		_status "Installing pip"
-		install_pip
-		_status "Installing uvloop"
 		install_pip3
+		_status "Installing uvloop"
 		install_uvloop
 	fi
 
