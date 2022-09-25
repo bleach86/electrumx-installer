@@ -260,5 +260,5 @@ else
 		systemctl daemon-reload
 	fi
 	install_electrumx
-        _info "Installed $($python -m pip freeze | grep -i electrumx)"
+        _info "Installed $($python -m pip3 freeze | grep -i electrumx)"
 fi
