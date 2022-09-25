@@ -17,7 +17,7 @@ function install_python38 {
 	$APT install -y software-properties-common || _error "Could not install package" 5
 	add-apt-repository -y ppa:deadsnakes/ppa
 	$APT update
-	packages="python3 python3-dev python3-distutils python3-pip"
+	packages="python3 python3-dev python3-distutils python3-uvloop python3-pip"
 	$APT install -y $packages || _error "Could not install package python3.8" 1
 }
 

@@ -189,10 +189,9 @@ if [ $UPDATE_ONLY == 0 ] || [ $UPDATE_PYTHON == 1 ]; then
 		_progress_total=$(( $_progress_total + 1 ))
 		_status "Installing pip"
 		install_pip3
+		_status "Installing uvloop"
+		install_uvloop
 	fi
-	
-	_status "Installing uvloop"
-	install_uvloop
 
 	if [ $USE_ROCKSDB == 1 ]; then
 	    _progress_total=$(( $_progress_total + 3 ))
