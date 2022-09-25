@@ -1,5 +1,5 @@
-if [ "$VERSION_ID" != "18.04" ] && [ "$VERSION_ID" != "20.04" ]; then
-	_warning "Only the last two LTS versions (18.04 and 20.04) are officially supported (but this will probably work)"
+if [ "$VERSION_ID" != "20.04" ] && [ "$VERSION_ID" != "22.04" ]; then
+	_warning "Only the last two LTS versions (20.04 and 22.04) are officially supported (but this will probably work)"
 fi
 
 . distributions/base.sh
@@ -7,7 +7,7 @@ fi
 . distributions/base-debianoid.sh
 . distributions/base-compile-rocksdb.sh
 
-if [ $(ver "$VERSION_ID") -ge $(ver "18.04") ]; then
+if [ $(ver "$VERSION_ID") -ge $(ver "20.04") ]; then
         newer_rocksdb=1
 fi
 
@@ -17,7 +17,7 @@ function install_python37 {
 	$APT install -y software-properties-common || _error "Could not install package" 5
 	add-apt-repository -y ppa:deadsnakes/ppa
 	$APT update
-	packages="python3.7 python3.7-dev python3.7-distutils"
+	packages="python3.8 python3.8-dev python3.8-distutils"
 	$APT install -y $packages || _error "Could not install package python3.7" 1
 }
 

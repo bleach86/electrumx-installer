@@ -168,16 +168,16 @@ if [ $UPDATE_ONLY == 0 ] || [ $UPDATE_PYTHON == 1 ]; then
 
 	if [[ $($python -V 2>&1) == *"Python 3.6"* ]] > /dev/null 2>&1 && [ $UPDATE_PYTHON == 0 ]; then
 		_info "Python 3.6 is already installed."
-	elif [[ $($python -V 2>&1) == *"Python 3.7"* ]] > /dev/null 2>&1; then
-		_info "Python 3.7 is already installed."
+	elif [[ $($python -V 2>&1) == *"Python 3.8"* ]] > /dev/null 2>&1; then
+		_info "Python 3.8 is already installed."
 	else
-		_status "Installing Python 3.7"
+		_status "Installing Python 3.8"
 		python=python3.7
 		install_python37
-		if [[ $($python -V 2>&1) == *"Python 3.7"* ]] > /dev/null 2>&1; then
+		if [[ $($python -V 2>&1) == *"Python 3.8"* ]] > /dev/null 2>&1; then
 			_info "Python 3.7 successfully installed"
 		else
-			_error "Unable to install Python 3.7" 4
+			_error "Unable to install Python 3.8" 4
 		fi
 	fi
 	
