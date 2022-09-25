@@ -173,7 +173,7 @@ if [ $UPDATE_ONLY == 0 ] || [ $UPDATE_PYTHON == 1 ]; then
 	else
 		_status "Installing Python 3.8"
 		python=python3.8
-		install_python38
+		#install_python38
 		if [[ $($python -V 2>&1) == *"Python 3.8"* ]] > /dev/null 2>&1; then
 			_info "Python 3.8 successfully installed"
 		else
