@@ -56,7 +56,7 @@ function install_uvloop {
 
 function install_python_rocksdb {
     $python -m pip install "Cython>=0.20"
-	$python -m pip install python-rocksdb || _error "Could not install python_rocksdb" 1
+	$python -m pip3 install python-rocksdb || _error "Could not install python_rocksdb" 1
 }
 
 function add_user {
