@@ -190,6 +190,7 @@ if [ $UPDATE_ONLY == 0 ] || [ $UPDATE_PYTHON == 1 ]; then
 		_status "Installing pip"
 		install_pip
 		_status "Installing uvloop"
+		install_pip3
 		install_uvloop
 	fi
 
