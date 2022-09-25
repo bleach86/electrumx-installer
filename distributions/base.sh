@@ -45,8 +45,8 @@ function install_pip {
 }
 
 function install_pyrocksdb {
-	$python -m pip install "Cython>=0.20"
-	$python -m pip install git+git://github.com/stephan-hof/pyrocksdb.git || _error "Could not install pyrocksdb" 1
+	$python -m pip3 install "Cython>=0.20"
+	$python -m pip3 install git+git://github.com/stephan-hof/pyrocksdb.git || _error "Could not install pyrocksdb" 1
 }
 
 function install_uvloop {
