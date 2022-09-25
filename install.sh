@@ -175,7 +175,7 @@ if [ $UPDATE_ONLY == 0 ] || [ $UPDATE_PYTHON == 1 ]; then
 		python=python3.7
 		install_python37
 		if [[ $($python -V 2>&1) == *"Python 3.8"* ]] > /dev/null 2>&1; then
-			_info "Python 3.7 successfully installed"
+			_info "Python 3.8 successfully installed"
 		else
 			_error "Unable to install Python 3.8" 4
 		fi
@@ -189,6 +189,8 @@ if [ $UPDATE_ONLY == 0 ] || [ $UPDATE_PYTHON == 1 ]; then
 		_progress_total=$(( $_progress_total + 1 ))
 		_status "Installing pip"
 		install_pip
+		_status "Installing uvloop"
+		install_uvloop
 	fi
 
 	if [ $USE_ROCKSDB == 1 ]; then

@@ -23,8 +23,8 @@ function install_electrumx {
 		sed -i "s/'plyvel',//" setup.py
 	fi
 	if [ "$python" != "python3" ]; then
-		sed -i "s:usr/bin/env python3:usr/bin/env python3.7:" electrumx_rpc
-		sed -i "s:usr/bin/env python3:usr/bin/env python3.7:" electrumx_server
+		sed -i "s:usr/bin/env python3:usr/bin/env python3.8:" electrumx_rpc
+		sed -i "s:usr/bin/env python3:usr/bin/env python3.8:" electrumx_server
 	fi
 	$python -m pip install . --upgrade > /dev/null 2>&1
 	if ! $python -m pip install . --upgrade; then
@@ -47,6 +47,11 @@ function install_pip {
 function install_pyrocksdb {
 	$python -m pip install "Cython>=0.20"
 	$python -m pip install git+git://github.com/stephan-hof/pyrocksdb.git || _error "Could not install pyrocksdb" 1
+}
+
+function install_uvloop {
+	$python -m pip install "Cython>=0.20"
+	$python -m pip install uvloop || _error "Could not install uvloop" 1
 }
 
 function install_python_rocksdb {
