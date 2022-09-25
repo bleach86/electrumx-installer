@@ -172,7 +172,7 @@ if [ $UPDATE_ONLY == 0 ] || [ $UPDATE_PYTHON == 1 ]; then
 		_info "Python 3.8 is already installed."
 	else
 		_status "Installing Python 3.8"
-		python=python3.8
+		python=python3
 		install_python38
 	fi
 	
